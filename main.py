@@ -1,9 +1,9 @@
-from big_graph.directed_big_graph import DirectedBigGraph
+from big_graph.int_directed_big_graph import IntDirectedBigGraph
 
 
 if __name__ == '__main__':
-    directed_big_graph = DirectedBigGraph()
-    directed_big_graph.generate_data(10, 50)
+    directed_big_graph = IntDirectedBigGraph()
+    directed_big_graph.generate_data(1000, 5000)
 
     directed_big_graph.save_graph('./data/random_graph.txt')
 
