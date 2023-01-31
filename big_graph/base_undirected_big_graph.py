@@ -94,15 +94,15 @@ class BaseUnDirectedBigGraph(BaseBigGraph):
 
         visited = set()
         stack = [start_node]
-        edges = []
+        path = []
 
         while stack:
             node = stack.pop()
             if node not in visited:
                 visited.add(node)
+                path.append(node)
 
                 for neighbor in self.graph[node]:
                     stack.append(neighbor)
-                    edges.append((node, neighbor))
 
-        return edges
+        return path
