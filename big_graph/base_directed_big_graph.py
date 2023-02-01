@@ -16,11 +16,17 @@ class BaseDirectedBigGraph(BaseBigGraph):
         self.graph = {}
 
     def in_neighbors(self, node):
-        """Return the in-neighbors of a node"""
+        """
+        Return the in-neighbors of a node
+        O(1)
+        """
         return self.graph[node][0]
 
     def out_neighbors(self, node):
-        """Return the out-neighbors of a node"""
+        """
+        Return the out-neighbors of a node
+        O(1)
+        """
         return self.graph[node][1]
 
     @abstractmethod
@@ -42,7 +48,10 @@ class BaseDirectedBigGraph(BaseBigGraph):
                 file.write(str(node) + ' ' + ' '.join(map(str, self.graph[node][1])) + '\n')
 
     def add_node(self, node):
-        """Add a node to the graph"""
+        """
+        Add a node to the graph
+        O(1)
+        """
         if node not in self.graph:
             self.graph[node] = ([], [])
 

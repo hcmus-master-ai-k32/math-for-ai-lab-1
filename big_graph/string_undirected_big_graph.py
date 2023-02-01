@@ -48,12 +48,14 @@ class StringUnDirectedBigGraph(BaseUnDirectedBigGraph):
                     self.graph[node] = []
 
                 for neighbor in line[1:]:
-                    self.graph[node].append(neighbor)
+                    if neighbor not in self.graph[node]:
+                        self.graph[node].append(neighbor)
 
                     if neighbor not in self.graph:
                         self.graph[neighbor] = []
 
-                    self.graph[neighbor].append(node)
+                    if node not in self.graph[neighbor]:
+                        self.graph[neighbor].append(node)
 
         for node in self.graph:
             self.graph[node].sort()
